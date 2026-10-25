@@ -1,0 +1,448 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KIND//WELL :: Associate Supply Network</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f7f7ef;color:#172400;font:13px Verdana,Arial,sans-serif}a{color:#0645ad;text-decoration:underline;cursor:pointer}button,input,select{font:12px Verdana,Arial,sans-serif}button{cursor:pointer;border:2px outset #e4e4e4;background:#e5e5d5;padding:5px 9px}button:active{border-style:inset}.wrap{max-width:1100px;margin:auto;background:white;border-left:1px solid #8e9c69;border-right:1px solid #8e9c69;min-height:100vh}.tiny{font-size:10px}.top{background:#dbff66;padding:8px 12px;border-bottom:3px solid #5c8e0e}.mast{display:flex;align-items:center;justify-content:space-between;gap:12px}.logo{font:bold 33px Arial,sans-serif;letter-spacing:-2px;color:#264500;text-shadow:1px 1px white}.smile{display:inline-grid;place-items:center;background:#ffed3c;color:#333;border:2px solid #2c3b00;border-radius:50%;width:45px;height:45px;font:35px Arial;transform:rotate(-8deg)}.nav{background:#87be22;padding:7px 12px;border-bottom:3px ridge #4c6c12;display:flex;gap:16px;flex-wrap:wrap}.nav a{color:#102800;font-weight:bold}.search{background:#eef6d3;border-bottom:1px solid #8b9f55;padding:9px 12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}.search input{flex:1;min-width:180px;padding:5px;border:2px inset #eee}.columns{display:grid;grid-template-columns:185px 1fr 185px;gap:10px;padding:10px}.panel{border:1px solid #88a341;margin-bottom:10px;background:#fcfff5}.panel h3{font-size:12px;margin:0;padding:6px;background:#b7e64a;border-bottom:1px solid #7fa12f}.panel .inner{padding:8px}.side-link{display:block;padding:5px 2px;border-bottom:1px dotted #c7d7a8}.hero{background:#f5ffdc;border:2px ridge #a1c957;padding:12px;display:flex;justify-content:space-between;gap:8px;align-items:center}.hero h1{font: bold 25px Georgia,serif;color:#325800;margin:4px 0}.hero p{line-height:1.6}.badge{font:bold 11px Verdana;background:#ffe844;padding:4px 7px;border:1px solid #ae9d00}.section{background:#82b923;color:#fff;padding:6px 9px;font-weight:bold;margin:12px 0 7px;border:2px outset #b4d77b}.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.product{border:1px solid #b4c996;padding:9px;min-height:170px;background:#fff}.product .art{float:right;font-size:38px;padding:6px;background:#f2f8e4;border:1px solid #d4e3ba}.price{font:bold 17px Arial;color:#a13800;margin:7px 0}.tag{font-size:10px;color:#63722c}.notice{border:2px dashed #a1bb69;background:#fbffed;padding:10px;line-height:1.6}.footer{background:#dcf3a3;border-top:3px double #789f34;text-align:center;padding:18px;line-height:2}.blink{animation:blink 1.5s step-end infinite}@keyframes blink{50%{opacity:0}}.marquee{background:#ffed47;padding:5px;overflow:hidden;white-space:nowrap;border-bottom:1px solid #c6a800}.marquee span{display:inline-block;animation:move 24s linear infinite}@keyframes move{from{transform:translateX(90%)}to{transform:translateX(-110%)}}.modalbg{position:fixed;inset:0;background:#0008;display:none;align-items:center;justify-content:center;padding:15px;z-index:10}.modal{background:#fff;border:4px ridge #a8c968;width:min(510px,100%);box-shadow:8px 8px #2225}.modal header{background:#7bb326;color:white;padding:8px;font-weight:bold;display:flex;justify-content:space-between}.modal main{padding:16px;line-height:1.8}.field{width:100%;padding:7px;border:2px inset #ddd;margin:5px 0 10px}.status{background:#fff8c5;border:1px solid #c5b15b;padding:8px;margin-top:10px}.cart-count{font-weight:bold}.date{font-size:10px;color:#5d6c33} @media(max-width:760px){.columns{grid-template-columns:1fr}.left,.right{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.mast{flex-wrap:wrap}.logo{font-size:27px}}@media(max-width:430px){.products,.left,.right{grid-template-columns:1fr}.hero h1{font-size:21px}}
+
+.product{min-height:215px}.product p{line-height:1.5}.art{min-width:57px;text-align:center}
+.spec{background:#f2f7e8;border:1px solid #c6d8a0;padding:6px;font-size:10px;margin:7px 0}
+.work{background:#fffbd8;border:1px solid #d9ca6b;padding:8px;margin-bottom:9px}
+.tabs button{margin:2px}.logline{border-bottom:1px dotted #aac37a;padding:7px 0}
+.mono{font-family:monospace}.tinyred{color:#a03920}.mainnotice{background:#f4fbdc;border:2px ridge #b0ce75;padding:12px}
+</style></head><body>
+<div class="wrap">
+<div class="top"><div class="mast"><div style="display:flex;align-items:center;gap:10px"><span class="smile">☺</span><div><div class="logo">KIND//WELL<span style="font-size:12px;letter-spacing:0">.net</span></div><div class="tiny">ASSOCIATE SUPPLY NETWORK · INTERNAL CATALOG · EST. 1998</div></div></div><div style="text-align:right"><b>Welcome back, Associate 0418!</b><br><span class="tiny">TERMINAL: FIELD / ACTIVE SESSION</span><br><a onclick="show('account')">My Desk</a> | <a onclick="show('cart')">Supply Request (<span class="cart-count">0</span>)</a></div></div></div>
+<div class="nav"><a onclick="show('home')">START PAGE</a><a onclick="show('catalog')">WAREHOUSE CATALOG</a><a onclick="show('assignments')">ASSIGNMENTS</a><a onclick="show('dispatch')">DISPATCH</a><a onclick="show('forms')">FORMS & REPORTS</a><a onclick="show('bulletins')">BULLETIN BOARD</a><a onclick="show('account')">MY DESK</a><a onclick="show('directory')">DIRECTORY</a><a onclick="show('university')">TRAINING</a><a onclick="show('wellie')">WELLIE'S CORNER</a></div>
+<div class="marquee"><span>☺ THANK YOU FOR ANOTHER PRODUCTIVE QUARTER! ☺ ALL FIELD RETURNS MUST BE FILED BEFORE MONDAY ☺ PLEASE KEEP YOUR BADGE VISIBLE IN APPROVED AREAS ☺ REMEMBER: EVERY CASE DESERVES A SMILE! ☺</span></div>
+<div class="search"><b>CATALOG LOOKUP:</b><input id="search" placeholder="Search kit number, name, or department..." onkeydown="if(event.key==='Enter')search()"><button onclick="search()">SEARCH »</button><span class="tiny">☑ INTERNAL CONNECTION</span></div>
+<div class="columns">
+<aside class="left"><div class="panel"><h3>☻ SUPPLY DEPARTMENTS</h3><div class="inner"><a class="side-link" onclick="category('all')">» All merchandise</a><a class="side-link" onclick="category('tools')">» Hand tools & hardware</a><a class="side-link" onclick="category('field')">» Field essentials</a><a class="side-link" onclick="category('identity')">» Identity & credentials</a><a class="side-link" onclick="category('records')">» Records & documentation</a><a class="side-link" onclick="category('return')">» Post-assignment</a><a class="side-link" onclick="category('office')">» Office & morale</a></div></div>
+<div class="panel"><h3>ASSOCIATE LINKS</h3><div class="inner"><a class="side-link" onclick="show('assignments')">Current assignment</a><a class="side-link" onclick="show('cart')">Pending requisition</a><a class="side-link" onclick="show('forms')">Completion paperwork</a><a class="side-link" onclick="show('dispatch')">Dispatch messages</a><a class="side-link" onclick="show('account')">My personnel file</a><a class="side-link" onclick="show('directory')">Employee directory</a><a class="side-link" onclick="show('university')">Training courses</a><a class="side-link" onclick="show('wellie')">WELLIE's Corner</a><a class="side-link" onclick="show('payroll')">Payroll & benefits</a></div></div>
+<div class="panel"><h3>WEBMASTER'S NOTE</h3><div class="inner tiny">Optimized for Internet Explorer 5.0!<br><br>Best viewed at 800 × 600.<br><br><b>YOU ARE VISITOR #</b><br><span style="background:#111;color:#8cff22;font:17px monospace;padding:3px">00004182</span></div></div></aside>
+<main id="main"></main>
+<aside class="right"><div class="panel"><h3>☺ ASSOCIATE STATUS</h3><div class="inner"><b>0418 / FIELD SERVICES</b><br><span class="tiny">Standing: SATISFACTORY<br>Assigned cases: 02<br>Equipment holds: 00<br>Next review: NOV 06</span><br><br><button onclick="show('account')">VIEW PROFILE »</button></div></div>
+<div class="panel"><h3>IMPORTANT REMINDER</h3><div class="inner tiny">The individual named in your assignment is not a customer. Do not contact Customer Care regarding assignment subjects.<br><br>Submit a field report following every resolution.</div></div>
+<div class="panel"><h3>SUPPLY POLICY</h3><div class="inner tiny">All kits are company property. Missing items will be deducted from your quarterly allowance.<br><br><b>NO PERSONAL ORDERS.</b></div></div>
+<div class="panel"><h3>ASK WELLIE!</h3><div class="inner"><div style="font-size:49px;text-align:center;color:#c3a000">☺</div><span class="tiny">Have a question? Our internal help desk is standing by!</span><br><br><a onclick="show('dispatch')">Contact Dispatch »</a></div></div></aside>
+</div><footer class="footer"><b>KIND//WELL — GOOD WORK IS ITS OWN REWARD. ☺</b><br><a onclick="show('bulletins')">Corporate News</a> | <a onclick="show('forms')">Forms</a> | <a onclick="show('dispatch')">Help Desk</a><br><span class="tiny">© 1998–2001 KIND//WELL CORPORATION · AUTHORIZED ASSOCIATE ACCESS ONLY</span></footer>
+</div><div class="modalbg" id="overlay" onclick="if(event.target===this)closeModal()"><div class="modal"><header><span id="modal-title">KIND//WELL</span><button onclick="closeModal()">X</button></header><main id="modal-content"></main></div></div>
+<script>
+const kits=[
+{id:'K-001',name:'First-Day Field Kit',cat:'field',price:120,icon:'▣',desc:'Standard-issue starter bundle for newly cleared associates.',contents:'Badge sleeve · Assignment folder · Carbon-copy forms · Company pen · WELLIE lapel pin',note:'Issued once per associate.'},
+{id:'K-014',name:'Overnight Assignment Kit',cat:'field',price:175,icon:'☾',desc:'Administrative supplies for assignments extending beyond one scheduled shift.',contents:'Travel authorization · Expense envelopes · Overnight logbook · Emergency contact card',note:'Requires active overnight authorization.'},
+{id:'K-023',name:'Identification Kit',cat:'identity',price:210,icon:'▤',desc:'Department-approved credentials and access paperwork for assigned personnel.',contents:'Company identification holder · Clearance forms · Visitor log · Verification card',note:'Personnel Office approval required.'},
+{id:'K-031',name:'Observation & Records Kit',cat:'records',price:95,icon:'◎',desc:'For documenting subject activity and submitting routine case observations.',contents:'Numbered observation sheets · Timestamp ledger · Evidence labels · Sealed report envelope',note:'Return all paperwork to Records.'},
+{id:'K-042',name:'Closure Documentation Kit',cat:'return',price:145,icon:'✓',desc:'Standard forms used after a subject has been marked RESOLVED.',contents:'Final disposition form · Case closure receipt · Supervisor sign-off sheet · Return checklist',note:'Mandatory on all completed cases.'},
+{id:'K-055',name:'Equipment Return Kit',cat:'return',price:65,icon:'↩',desc:'For reconciling issued property at the end of an assignment.',contents:'Inventory cards · Tamper-evident stationery seals · Return labels · Receipt booklet',note:'Unreturned property remains on your file.'},
+{id:'K-067',name:'Supervisor Review Kit',cat:'records',price:180,icon:'★',desc:'Materials for quarterly performance reviews and disputed case outcomes.',contents:'Review folder · Performance rubric · Appeal request forms · Comment slips',note:'Restricted to approved personnel.'},
+{id:'K-072',name:'Personnel Wellness Kit',cat:'office',price:35,icon:'☺',desc:'Because your wellbeing matters to us!',contents:'WELLIE stress ball · Tea sachet · Motivational calendar · 3-day leave request form',note:'Leave requests subject to operational need.'},
+{id:'K-088',name:'Client Correspondence Kit',cat:'records',price:80,icon:'✉',desc:'Approved paperwork for handling client-side questions and case amendments.',contents:'Response templates · Numbered correspondence cards · Escalation form',note:'Do not correspond directly without clearance.'},
+{id:'K-099',name:'Department Recognition Kit',cat:'office',price:24,icon:'☼',desc:'A little appreciation goes a long way!',contents:'Achievement ribbon · Certificate of good standing · WELLIE sticker sheet',note:'Complimentary after 10 satisfactory closures.'},
+{"id": "T-101", "name": "Steel Crowbar, 18 in.", "cat": "tools", "price": 34.95, "icon": "⚒", "desc": "General-purpose pry bar for authorized maintenance work.", "contents": "Drop-forged steel · Green enamel finish", "note": "Warehouse A / 38 in stock"},
+{"id": "T-102", "name": "Rubber Mallet", "cat": "tools", "price": 16.5, "icon": "▰", "desc": "Non-marring workshop mallet.", "contents": "Black rubber head · Hardwood handle", "note": "Warehouse A / 92 in stock"},
+{"id": "T-103", "name": "Adjustable Wrench", "cat": "tools", "price": 21.25, "icon": "⚙", "desc": "Chrome-plated adjustable wrench.", "contents": "8-inch size · Engraved inventory code", "note": "Warehouse A / 56 in stock"},
+{"id": "T-104", "name": "Utility Knife", "cat": "tools", "price": 12.99, "icon": "▱", "desc": "Retractable utility cutter for cartons and office maintenance.", "contents": "Safety lock · Replacement blade compartment", "note": "Warehouse B / 41 in stock"},
+{"id": "T-105", "name": "Heavy-Duty Flashlight", "cat": "tools", "price": 29.0, "icon": "☼", "desc": "Portable flashlight for approved field shifts.", "contents": "Weather-resistant shell · Wrist strap", "note": "Warehouse A / 73 in stock"},
+{"id": "T-106", "name": "Measuring Tape", "cat": "tools", "price": 8.75, "icon": "▤", "desc": "Twenty-five-foot measuring tape.", "contents": "Locking blade · Belt clip", "note": "Warehouse A / 105 in stock"},
+{"id": "T-107", "name": "Tool Roll, Empty", "cat": "tools", "price": 23.0, "icon": "▥", "desc": "Canvas roll for storing assigned hand tools.", "contents": "12 numbered pockets · Green canvas", "note": "Warehouse B / 23 in stock"},
+{"id": "T-108", "name": "Work Gloves", "cat": "tools", "price": 14.5, "icon": "♧", "desc": "General warehouse and maintenance gloves.", "contents": "Reinforced palm · Sizes S–XL", "note": "Warehouse B / 120 in stock"},
+{"id": "T-109", "name": "Compact Screwdriver Set", "cat": "tools", "price": 18.0, "icon": "✣", "desc": "Six-piece screwdriver set for office and facilities use.", "contents": "Slotted and cross-head tips", "note": "Warehouse A / 65 in stock"},
+{"id": "T-110", "name": "Folding Step Stool", "cat": "tools", "price": 44.0, "icon": "▥", "desc": "Compact access stool for supply shelves.", "contents": "Non-slip feet · 2-step", "note": "Warehouse A / 12 in stock"},
+{"id": "E-201", "name": "Canvas Field Bag", "cat": "field", "price": 48.0, "icon": "▣", "desc": "Regulation green equipment bag with internal dividers.", "contents": "Canvas shell · ID pocket · Shoulder strap", "note": "Warehouse B / 19 in stock"},
+{"id": "E-202", "name": "Weatherproof Notebook", "cat": "field", "price": 9.5, "icon": "▤", "desc": "Small ruled notebook for shift and case notes.", "contents": "96 pages · Numbered sheets", "note": "Warehouse A / 302 in stock"},
+{"id": "E-203", "name": "Portable Clipboard", "cat": "field", "price": 11.0, "icon": "▧", "desc": "Hardboard clipboard with covered document compartment.", "contents": "Letter size · Spring clip", "note": "Warehouse A / 98 in stock"},
+{"id": "E-204", "name": "Pocket Radio", "cat": "field", "price": 59.0, "icon": "◉", "desc": "Company-issued radio receiver for scheduled dispatch notices.", "contents": "Belt clip · Battery compartment", "note": "Dispatch / Approval required"},
+{"id": "E-205", "name": "First Aid Pouch", "cat": "field", "price": 39.0, "icon": "✚", "desc": "Basic workplace first-aid supplies.", "contents": "Bandages · Gauze · Gloves · Instruction card", "note": "Warehouse B / 64 in stock"},
+{"id": "E-206", "name": "Rain Poncho", "cat": "field", "price": 17.0, "icon": "☂", "desc": "Lime-green weather poncho with company crest.", "contents": "One size · Reusable storage sleeve", "note": "Warehouse B / 74 in stock"},
+{"id": "E-207", "name": "Insulated Thermos", "cat": "field", "price": 25.0, "icon": "◒", "desc": "Associate-approved beverage container.", "contents": "Stainless steel · 16 oz", "note": "Warehouse A / 88 in stock"},
+{"id": "R-301", "name": "Evidence Envelope Pack", "cat": "records", "price": 13.0, "icon": "✉", "desc": "Numbered paper envelopes for case-related documents.", "contents": "Pack of 25 · Preprinted log fields", "note": "Records / 87 in stock"},
+{"id": "R-302", "name": "Carbon Paper, 50 Sheets", "cat": "records", "price": 6.95, "icon": "▤", "desc": "Replacement duplicate-copy stationery.", "contents": "Letter size · Black transfer", "note": "Records / 180 in stock"},
+{"id": "R-303", "name": "Date & Time Stamp", "cat": "records", "price": 19.0, "icon": "◷", "desc": "Manual stamp for incoming departmental forms.", "contents": "Adjustable date wheel · Ink pad", "note": "Records / 42 in stock"},
+{"id": "R-304", "name": "Case File Storage Box", "cat": "records", "price": 32.0, "icon": "▣", "desc": "Archive-grade carton for closed subject files.", "contents": "Numbered tabs · Reinforced handles", "note": "Records / 26 in stock"},
+{"id": "R-305", "name": "CONFIDENTIAL Stamp", "cat": "records", "price": 12.0, "icon": "▥", "desc": "Red ink rubber stamp for controlled paperwork.", "contents": "Self-inking · 1.5-inch", "note": "Records / 71 in stock"},
+{"id": "I-401", "name": "Replacement Badge Holder", "cat": "identity", "price": 7.0, "icon": "▤", "desc": "Replacement clear employee ID sleeve.", "contents": "Green lanyard · Breakaway clasp", "note": "Personnel / 210 in stock"},
+{"id": "I-402", "name": "Desk Nameplate", "cat": "identity", "price": 22.0, "icon": "▰", "desc": "Engraved office nameplate for assigned desks.", "contents": "Black plastic · Gold lettering", "note": "Personnel / Made to order"},
+{"id": "P-501", "name": "Packing Tape, 6-Pack", "cat": "return", "price": 18.0, "icon": "▱", "desc": "Standard carton tape for supply returns.", "contents": "Clear · 48 mm width", "note": "Warehouse A / 90 in stock"},
+{"id": "P-502", "name": "Inventory Labels", "cat": "return", "price": 5.75, "icon": "▦", "desc": "Sequential labels for tracking company property.", "contents": "Roll of 100 · Yellow stock", "note": "Warehouse A / 350 in stock"},
+{"id": "P-503", "name": "Return Carton, Medium", "cat": "return", "price": 4.5, "icon": "□", "desc": "Standard corrugated carton for supply returns.", "contents": "Double-wall · Printed company seal", "note": "Warehouse A / 500 in stock"},
+{"id": "O-601", "name": "WELLIE Coffee Mug", "cat": "office", "price": 14.99, "icon": "☺", "desc": "Start your day with a smile!", "contents": "Ceramic · 12 oz · Dishwasher safe", "note": "Gift Shop / 215 in stock"},
+{"id": "O-602", "name": "KIND//WELL Mouse Pad", "cat": "office", "price": 8.99, "icon": "▦", "desc": "Brighten up your desk with WELLIE!", "contents": "Lime green · Non-slip backing", "note": "Gift Shop / 99 in stock"},
+{"id": "O-603", "name": "Company Umbrella", "cat": "office", "price": 24.99, "icon": "☂", "desc": "Our outlook is always sunny.", "contents": "Yellow canopy · WELLIE logo", "note": "Gift Shop / 48 in stock"},
+{"id": "O-604", "name": "Employee Birthday Bundle", "cat": "office", "price": 19.99, "icon": "★", "desc": "Everything for a mandatory birthday celebration.", "contents": "Paper banner · Confetti · Greeting card", "note": "Gift Shop / 32 in stock"},
+{"id": "O-605", "name": "Desktop Smiley Clock", "cat": "office", "price": 29.99, "icon": "◷", "desc": "WELLIE reminds you to clock in on time.", "contents": "Quartz movement · Yellow face", "note": "Gift Shop / 11 in stock"},
+{"id": "O-606", "name": "Stapler, Corporate Green", "cat": "office", "price": 11.99, "icon": "▰", "desc": "Standard desktop stapler.", "contents": "20-sheet capacity · 1,000 staples", "note": "Office / 127 in stock"},
+{"id": "O-607", "name": "WELLIE Sticker Sheet", "cat": "office", "price": 3.5, "icon": "☺", "desc": "Twelve ways to brighten your day.", "contents": "12 assorted stickers · Glossy finish", "note": "Gift Shop / 1,204 in stock"}
+];
+let cart=[],filter='all',page='home';
+const money=n=>'$'+n.toFixed(2);
+function card(k){return `<div class="product"><div class="art">${k.icon}</div><a onclick="detail('${k.id}')"><b>${k.name}</b></a><div class="tag">${k.id} | ${k.cat.toUpperCase()} | ISSUE ELIGIBLE</div><p>${k.desc}</p><div class="spec"><b>CONTENTS / SPECS:</b> ${k.contents}</div><div class="price">${money(k.price)} <span class="tiny">/ allowance</span></div><button onclick="add('${k.id}')">ADD TO REQUISITION »</button></div>`}
+function section(t){return `<div class="section">${t}</div>`}
+function show(p){page=p;let h='';if(p==='home'){h=`<div class="hero"><div><span class="badge">ASSOCIATE ACCESS CONFIRMED</span><h1>Everything you need to finish the job. ☺</h1><p>Browse approved kits, check assigned subjects, and submit your paperwork before the end of your shift.</p><button onclick="show('catalog')">BROWSE ISSUED KITS »</button></div><span style="font-size:82px;color:#d5ae00">☺</span></div>${section('★ YOUR ACTIVE WORK QUEUE ★')}<div class="work"><b>CASE 00741 — SUBJECT: ELLIS, MARA</b><br><span class="tiny">STATUS: OPEN · DISPOSITION: PENDING · DEADLINE: 11/04/2001</span><br><a onclick="show('assignments')">View assignment summary »</a></div><div class="work"><b>CASE 00738 — SUBJECT: VALE, ADRIAN</b><br><span class="tiny">STATUS: AWAITING REPORT · DISPOSITION: RESOLVED</span><br><a onclick="show('forms')">Submit closure paperwork »</a></div>${section('POPULAR WITH FIELD ASSOCIATES') }<div class="products">${kits.slice(0,4).map(card).join('')}</div>${section('A NOTE FROM MANAGEMENT')}<div class="notice">Dear Associate,<br><br>We appreciate your continued commitment to timely resolutions. Please remember that completed assignments are measured by accuracy, documentation, and customer satisfaction. Your work is important, and we are pleased to have you with us.<br><br>Warm regards,<br><i>Office of Associate Relations</i> ☺</div>`}
+else if(p==='catalog'){h=section('★ FIELD WAREHOUSE CATALOG · 2001 EDITION ★')+`<div class="tabs">${['all','tools','field','identity','records','return','office'].map(c=>`<button onclick="category('${c}')">${c.toUpperCase()}</button>`).join('')}</div><p class="tiny">Prices are deducted from your quarterly allowance. Items are subject to department approval and stock availability.</p><div id="catalog" class="products"></div>`}
+else if(p==='assignments'){h=section('ASSIGNED CASES · FIELD OFFICE 04')+`<div class="notice"><b>CASE 00741 / OPEN</b><hr><b>Subject:</b> Mara Ellis<br><b>Disposition:</b> Pending<br><b>Assigned associate:</b> 0418<br><b>Office note:</b> The client has requested confirmation of closure. No report has been received.<br><b>Administrative deadline:</b> 11/04/2001<br><br><button onclick="show('forms')">OPEN REPORT FORMS »</button></div><br><div class="notice"><b>CASE 00738 / RESOLVED</b><hr><b>Subject:</b> Adrian Vale<br><b>Disposition:</b> Resolved<br><b>Office note:</b> Final report overdue. Payroll will remain on hold pending supervisor approval.<br><br><button onclick="show('forms')">COMPLETE REPORT »</button></div>`}
+else if(p==='dispatch'){h=section('DISPATCH OFFICE / INTERNAL MESSAGES')+`<div class="work"><b>INBOX: 3 MESSAGES</b></div><div class="logline"><b>10/23 — Records Dept.</b><br>We are still waiting on your closure packet for 00738. Please do not make us ask again.</div><div class="logline"><b>10/22 — Dispatch</b><br>Case 00741 has been reassigned to your desk. Read the subject file before acknowledging receipt.</div><div class="logline"><b>10/20 — Human Resources</b><br>Participation in the autumn picnic is mandatory. Families welcome.</div>${section('SEND AN INTERNAL MESSAGE')}<input class="field" id="to" placeholder="Department or associate number"><textarea class="field" id="msg" rows="4" placeholder="Enter your message..."></textarea><button onclick="sendMessage()">SEND MESSAGE »</button>`}
+else if(p==='forms'){h=section('FORM LIBRARY / DEPARTMENT 04')+`<div class="mainnotice"><b>KW-F17 — FIELD COMPLETION REPORT</b><p class="tiny">All submissions are saved in this local demonstration only.</p><label>Case number</label><select class="field" id="case"><option>00738 — Adrian Vale</option><option>00741 — Mara Ellis</option></select><label>Disposition</label><select class="field" id="disposition"><option>Pending</option><option>Resolved</option><option>Deferred</option><option>Referred to supervisor</option></select><label>Administrative remarks</label><textarea class="field" id="remarks" rows="5" placeholder="Enter report remarks..."></textarea><button onclick="submitReport()">SUBMIT TO RECORDS »</button></div>${section('OTHER AVAILABLE FORMS')}<a onclick="notice('Form KW-22 is not available to your department.')">» KW-22 Expense reimbursement</a><br><a onclick="notice('Form KW-09 is awaiting supervisor release.')">» KW-09 Assignment dispute</a><br><a onclick="notice('Please contact Human Resources.')">» KW-03 Bereavement leave</a>`}
+else if(p==='bulletins'){h=section('CORPORATE BULLETIN BOARD')+`<div class="notice"><b>OCTOBER 2001 — MESSAGE FROM THE PRESIDENT</b><p>Our most productive year yet! The Board extends its sincere thanks to our field personnel and support staff. Keep up the excellent work.</p></div><div class="logline"><b>10/18/2001:</b> A reminder that unauthorized overtime is not reimbursable.</div><div class="logline"><b>10/14/2001:</b> Employees must not discuss subject files in the cafeteria.</div><div class="logline"><b>10/09/2001:</b> New WELLIE coffee mugs available in the company store.</div><div class="logline"><b>10/01/2001:</b> Annual performance rankings will be posted after payroll closes.</div>`}
+else if(p==='account'){h=section('MY DESK / ASSOCIATE 0418')+`<div class="mainnotice"><b>EMPLOYEE RECORD</b><hr>Associate Number: 0418<br>Department: Field Services<br>Employment status: ACTIVE<br>Clearance: LEVEL II<br>Performance: SATISFACTORY<br>Outstanding reports: 01<br>Supply allowance: $1,500.00<br>Manager comments: "Reliable, though often late with paperwork."</div>${section('QUICK LINKS')}<a onclick="show('assignments')">» My assignments</a><br><a onclick="show('cart')">» Supply requests</a><br><a onclick="show('forms')">» File a report</a>`}
+else if(p==='directory'){h=section('KIND//WELL EMPLOYEE DIRECTORY — UPDATED 10/22/2001')+`<p class="tiny">Select a personnel record for department notes. Certain files are unavailable at your clearance.</p><div class="notice"><b>DEPARTMENT 04 / STAFF ROSTER</b><hr>${[['0418','You','Field Services','ACTIVE'],['0120','Dorothy M. Bell','Dispatch','ACTIVE'],['0209','Harold Finch','Records','ACTIVE'],['0303','Jenna L. Cross','Human Resources','ACTIVE'],['0440','Robert Keene','Field Services','TRANSFERRED'],['0501','Elaine W. Price','Compliance','RESTRICTED'],['XXXX','UNLISTED','—','REDACTED']].map(a=>`<div class="logline"><a onclick="person('${a[0]}','${a[1]}','${a[2]}','${a[3]}')"><b>${a[0]} — ${a[1]}</b></a><br><span class="tiny">${a[2]} · ${a[3]}</span></div>`).join('')}</div>`}
+else if(p==='university'){h=section('KIND//WELL UNIVERSITY ☺')+`<div class="hero"><div><h1>Learn. Grow. Improve!</h1><p>Your continued education is important to us. All assigned modules must be completed before annual review.</p></div><span style="font-size:72px;color:#d5ae00">☺</span></div>${[['U-101','A Friendly Introduction to Field Services','COMPLETE'],['U-114','Understanding Subject Dispositions','INCOMPLETE'],['U-120','Recordkeeping Is Everybody’s Responsibility','OVERDUE'],['U-203','Dealing with Difficult Client Questions','LOCKED'],['U-304','Why We Don’t Discuss Work at Home','AVAILABLE']].map(a=>`<div class="work"><b>${a[0]} — ${a[1]}</b><br><span class="tiny">STATUS: ${a[2]}</span><br><button onclick="course('${a[0]}','${a[1]}')">OPEN MODULE »</button></div>`).join('')}`}
+else if(p==='wellie'){h=section('WELCOME TO WELLIE’S CORNER! ☺')+`<div class="hero"><span style="font-size:95px;color:#d5ae00">☺</span><div><h1>Hi there, associate!</h1><p>I'm WELLIE! I'm here to help you have a happy, productive workday!</p></div></div><div class="notice"><b>FREQUENTLY ASKED QUESTIONS</b>${[['Why is my coworker no longer in the directory?','Personnel changes are confidential! Please congratulate your remaining coworkers on their continued service.'],['Can I refuse an assignment?','Please review the employment agreement you signed on your first day. ☺'],['What does RESOLVED mean?','It means the case is closed! Be sure to submit the appropriate paperwork.'],['Who is the subject in my case file?','The subject is the person named in the assignment. Remember: a subject is not a customer!'],['Why has my pay been held?','Incomplete records delay processing. A complete form is a happy form!']].map(a=>`<div class="logline"><a onclick="notice('${a[1].replace(/'/g,"\'")}')">Q: ${a[0]}</a></div>`).join('')}</div><p class="tiny">WELLIE is a trademark of KIND//WELL Corporation. Unauthorized reproductions are prohibited.</p>`}
+else if(p==='payroll'){h=section('PAYROLL / BENEFITS PORTAL')+`<div class="mainnotice"><b>ASSOCIATE 0418 — PAY PERIOD 20</b><hr>Base salary: $2,150.00<br>Field allowance: $1,500.00<br>Approved closure bonuses: $0.00<br>Withheld pending documentation: $640.00<br><br><b>PAYROLL STATUS: ON HOLD</b><p class="tiny">Please contact Records regarding case 00738 before submitting a payroll dispute.</p></div>${section('EMPLOYEE BENEFITS')}<div class="work">✓ Dental coverage<br>✓ Annual leave accrual<br>✓ On-site counseling<br>✓ Company picnic attendance<br>✓ Bereavement leave (approval required)</div><button onclick="notice('Request forwarded to Payroll.')">REQUEST PAYROLL REVIEW »</button>`}
+else if(p==='cart'){let total=cart.reduce((s,id)=>s+kits.find(k=>k.id===id).price,0);h=section('SUPPLY REQUISITION / PENDING')+`<div class="notice"><b>ASSOCIATE 0418 — REQUISITION SHEET</b><hr>${cart.length?cart.map((id,i)=>{let k=kits.find(x=>x.id===id);return `<div class="logline">${k.id} — ${k.name} — ${money(k.price)} <a onclick="remove(${i})">[REMOVE]</a></div>`}).join(''):'Your requisition is empty.'}<p><b>Allowance debit: ${money(total)}</b></p><button ${cart.length?'':'disabled'} onclick="request()">SUBMIT REQUISITION »</button></div>`}
+document.getElementById('main').innerHTML=h;if(p==='catalog')renderCatalog();window.scrollTo(0,0)}
+function renderCatalog(){let el=document.getElementById('catalog');if(el)el.innerHTML=kits.filter(k=>filter==='all'||k.cat===filter).map(card).join('')||'No merchandise available.'}
+function category(c){filter=c;show('catalog')}
+function search(){let q=document.getElementById('search').value.trim().toLowerCase();filter='all';show('catalog');document.getElementById('catalog').innerHTML=kits.filter(k=>(k.id+' '+k.name+' '+k.cat+' '+k.desc).toLowerCase().includes(q)).map(card).join('')||'<p>No matching items found.</p>'}
+function add(id){cart.push(id);document.querySelectorAll('.cart-count').forEach(x=>x.textContent=cart.length);notice('Item added to your supply requisition. ☺')}
+function remove(i){cart.splice(i,1);document.querySelectorAll('.cart-count').forEach(x=>x.textContent=cart.length);show('cart')}
+function detail(id){let k=kits.find(x=>x.id===id);modal(k.name,`<div style="font-size:55px;text-align:center">${k.icon}</div><b>${k.id} — ${k.name}</b><p>${k.desc}</p><div class="spec"><b>CONTENTS / SPECIFICATIONS:</b><br>${k.contents}</div><p><b>Issue price: ${money(k.price)}</b></p><p class="tiny">${k.note}</p><button onclick="add('${k.id}')">ADD TO REQUISITION »</button>`)}
+function person(id,name,dept,status){modal('PERSONNEL FILE '+id,`<b>${name}</b><p>Department: ${dept}<br>Status: ${status}</p><div class='spec'>${status==='REDACTED'||status==='RESTRICTED'?'ACCESS DENIED — This record is above your clearance.':status==='TRANSFERRED'?'Transfer destination not listed. Please do not contact the former associate.':'Personnel record available for administrative reference only.'}</div>`)}
+function course(id,name){modal('TRAINING MODULE '+id,`<h3>${name}</h3><p>Welcome to your assigned learning module! Please review the following policy statement.</p><div class='spec'>Every assignment is an administrative responsibility. Associates must document dispositions accurately, respect clearance restrictions, and avoid discussing subject records outside approved departments.</div><p><b>Knowledge check:</b> Who should receive your completed case report?</p><button onclick="notice('Correct! All reports go to Records. Your training progress has been acknowledged.');closeModal()">RECORDS DEPARTMENT</button> <button onclick="notice('Please review the handbook and try again.')">CUSTOMER CARE</button>`)}
+function modal(t,h){document.getElementById('modal-title').textContent=t;document.getElementById('modal-content').innerHTML=h;document.getElementById('overlay').style.display='flex'}
+function closeModal(){document.getElementById('overlay').style.display='none'}
+function notice(t){modal('KIND//WELL NOTICE',`<p>${t}</p><button onclick="closeModal()">OK</button>`)}
+function request(){let count=cart.length;cart=[];document.querySelectorAll('.cart-count').forEach(x=>x.textContent=0);show('cart');notice('Requisition KW-R'+String(4100+count)+' submitted to Supply Services. Await supervisor approval. ☺')}
+function sendMessage(){let t=document.getElementById('msg').value.trim();notice(t?'Message placed in the outgoing dispatch queue.':'Please enter a message.')}
+function submitReport(){let d=document.getElementById('disposition').value;notice('Disposition "'+d+'" recorded. Records will review your submission.')}
+show('home');
+</script><style>
+/* KIND//WELL 2001 promotional popups */
+.kw-congrats{width:min(460px,calc(100vw - 24px));border:4px ridge #f8e23b;animation:kw-pop .35s steps(4,end)}
+.kw-congrats .kw-ad-banner{background:repeating-linear-gradient(45deg,#e9ff8b,#e9ff8b 15px,#fff7b4 15px,#fff7b4 30px);min-height:245px}
+.kw-congrats .kw-ad-banner strong{font-size:29px;color:#34580b;text-shadow:2px 2px #fff}
+.kw-congrats .face{font-size:95px;animation:kw-bounce .8s infinite alternate}
+.kw-jingle-line{font-weight:bold;color:#8c5d00;letter-spacing:1px}.kw-play{background:#ffe853;border:3px outset #fff5a0;padding:8px;cursor:pointer;font-weight:bold}
+@keyframes kw-pop{from{transform:scale(.85)}to{transform:scale(1)}}@keyframes kw-bounce{to{transform:translateY(-9px) rotate(9deg)}}
+#kw-ad-layer{position:fixed;inset:0;pointer-events:none;z-index:9998;font-family:Verdana,Arial,sans-serif}
+.kw-ad{pointer-events:auto;position:absolute;width:min(390px,calc(100vw - 24px));background:#f4f4e7;border:2px outset #fff;box-shadow:3px 5px 0 #5558,7px 10px 18px #2225;color:#1e2b09;font-size:12px}
+.kw-ad-title{background:linear-gradient(90deg,#527c16,#b5dc42);color:white;padding:5px 7px;display:flex;justify-content:space-between;align-items:center;font-weight:bold;cursor:move;user-select:none}
+.kw-ad-title button{background:#e6ebd3;border:2px outset #fff;color:#213109;cursor:pointer;font:bold 12px monospace;padding:0 6px}
+.kw-ad-banner{margin:10px;border:3px ridge #c3cf8c;background:#eaff8e;min-height:175px;display:flex;align-items:center;justify-content:center;text-align:center;flex-direction:column;gap:8px;padding:12px}
+.kw-ad-banner .face{font-size:70px;line-height:1;color:#cba900}.kw-ad-banner strong{font:bold 20px Georgia,serif;color:#385e12}.kw-ad-banner small{font:11px Verdana,Arial,sans-serif;color:#455b1b}
+.kw-ad-foot{padding:0 10px 10px;display:flex;align-items:center;justify-content:space-between;gap:6px}.kw-ad-foot button{background:#d7ff70;border:2px outset #f5ffd5;padding:5px 9px;cursor:pointer;font-weight:bold}
+.kw-ad-img{max-width:100%;max-height:220px;object-fit:contain;display:block}.kw-ad-stamp{background:#ffed78;color:#4b3d00;border:1px solid #ad982b;padding:2px 5px;font-size:10px}
+#kw-ad-controls{position:fixed;bottom:9px;right:9px;z-index:9999;background:#eff9c9;border:2px outset #fff;padding:6px 9px;font:11px Verdana,Arial,sans-serif;box-shadow:2px 2px 0 #7776}#kw-ad-controls button{font-size:11px;margin-left:5px;cursor:pointer}
+@media(max-width:550px){.kw-ad{left:12px!important;top:70px!important}}
+</style>
+<div id="kw-ad-layer" aria-live="polite"></div><div id="kw-ad-controls">☺ PROMOTIONS <button onclick="kwAdOpen()">VIEW AD</button><button id="kw-ad-switch" onclick="kwAdToggle()">AUTO: ON</button><button onclick="kwSoundEnabled=!kwSoundEnabled;this.textContent='SOUND: '+(kwSoundEnabled?'ON':'OFF')">SOUND: ON</button></div>
+<script>
+/* Replace image:'' with an image filename or data URL when artwork is ready. */
+const kwPromotions=[
+ {title:'★ CONGRATULATIONS ASSOCIATE 0418! ★',headline:'YOU HAVE BEEN SELECTED!',copy:'Congratulations! You are today’s randomly selected associate! Claim your complimentary WELLIE recognition certificate. No cash value. Management approval required.',label:'CLAIM YOUR PRIZE',target:'account',image:'',jingle:true},
+ {title:'WELLIE SAYS: KEEP SMILING!',headline:'A GREAT DAY TO SAVE!',copy:'Visit the company store for exclusive associate merchandise.',label:'SHOP STAFF FAVORITES',target:'catalog',image:''},
+ {title:'WAREHOUSE ANNOUNCEMENT',headline:'TOOLS FOR EVERY TASK!',copy:'New arrivals in Hand Tools & Hardware. Check your allowance before ordering.',label:'BROWSE HARDWARE',target:'catalog',image:''},
+ {title:'KIND//WELL UNIVERSITY',headline:'LEARNING IS CARING!',copy:'Your mandatory training modules are waiting. Yes, all of them.',label:'GO TO TRAINING',target:'university',image:''},
+ {title:'A MESSAGE FROM HUMAN RESOURCES',headline:'YOU MATTER TO US!',copy:'Remember to submit your paperwork on time. Your pay depends on it.',label:'MY PAYROLL',target:'payroll',image:''},
+ {title:'THE WELLIE COLLECTION',headline:'TAKE A SMILE HOME!',copy:'Ask about mugs, stickers, stationery and recognition gifts.',label:'SHOP MERCHANDISE',target:'catalog',image:''}
+];
+let kwAdIndex=0,kwAdTimer=null,kwAdAutomatic=true,kwAdActive=null,kwAudio=null,kwSoundEnabled=true;
+function kwJingle(){if(!kwSoundEnabled)return;try{const C=window.AudioContext||window.webkitAudioContext;if(!C)return;kwAudio=kwAudio||new C();if(kwAudio.state==='suspended')kwAudio.resume();const notes=[523.25,659.25,783.99,1046.5,783.99,880,987.77,1046.5];let now=kwAudio.currentTime+0.025;notes.forEach((freq,i)=>{let osc=kwAudio.createOscillator(),gain=kwAudio.createGain();osc.type='square';osc.frequency.value=freq;gain.gain.setValueAtTime(0.0001,now+i*.145);gain.gain.exponentialRampToValueAtTime(.065,now+i*.145+.012);gain.gain.exponentialRampToValueAtTime(.0001,now+i*.145+.12);osc.connect(gain).connect(kwAudio.destination);osc.start(now+i*.145);osc.stop(now+i*.145+.125)})}catch(e){}}
+function kwAdClose(){const a=document.getElementById('kw-ad-window');if(a)a.remove();kwAdActive=null}
+function kwAdOpen(){kwAdClose();const ad=kwPromotions[kwAdIndex++%kwPromotions.length];kwAdActive=ad;const root=document.getElementById('kw-ad-layer');const win=document.createElement('div');win.className='kw-ad';win.id='kw-ad-window';win.style.right=(25+Math.floor(Math.random()*75))+'px';win.style.top=(90+Math.floor(Math.random()*115))+'px';
+if(ad.jingle){win.classList.add('kw-congrats');}const art=ad.image?`<img class="kw-ad-img" src="${ad.image}" alt="${ad.headline}">`:`<div class="face">☺</div><strong>${ad.headline}</strong><small>${ad.copy}</small>${ad.jingle?`<div class="kw-jingle-line">♫ YOU’RE A STAR AT KIND//WELL! ♫</div><button class="kw-play" onclick="kwJingle()">♫ PLAY CONGRATULATIONS JINGLE</button>`:""}`;
+win.innerHTML=`<div class="kw-ad-title"><span>▣ ${ad.title}</span><button onclick="kwAdClose()" title="Close advertisement">X</button></div><div class="kw-ad-banner">${art}</div><div class="kw-ad-foot"><span class="kw-ad-stamp">ASSOCIATE SPECIAL!</span><button onclick="kwAdGo()">${ad.label} »</button><button onclick="kwAdOpen()">NEXT »</button></div>`;root.appendChild(win);if(ad.jingle&&kwAudio&&kwAudio.state==='running')kwJingle();
+const bar=win.querySelector('.kw-ad-title');let start=null;bar.addEventListener('pointerdown',e=>{if(e.target.tagName==='BUTTON')return;start={x:e.clientX,y:e.clientY,l:win.getBoundingClientRect().left,t:win.getBoundingClientRect().top};bar.setPointerCapture(e.pointerId)});bar.addEventListener('pointermove',e=>{if(!start)return;win.style.left=Math.max(0,Math.min(innerWidth-win.offsetWidth,start.l+e.clientX-start.x))+'px';win.style.top=Math.max(0,Math.min(innerHeight-45,start.t+e.clientY-start.y))+'px';win.style.right='auto'});bar.addEventListener('pointerup',()=>start=null);
+}
+function kwAdGo(){if(kwAdActive?.jingle){kwJingle();notice('CONGRATULATIONS! Your recognition certificate has been requested. Please allow 6–8 business weeks for management approval. ☺');kwAdClose();return;}const p=kwAdActive?.target;kwAdClose();if(p&&typeof show==='function')show(p)}
+function kwAdToggle(){kwAdAutomatic=!kwAdAutomatic;document.getElementById('kw-ad-switch').textContent='AUTO: '+(kwAdAutomatic?'ON':'OFF');if(kwAdTimer)clearInterval(kwAdTimer);if(kwAdAutomatic)kwAdTimer=setInterval(()=>{if(!document.getElementById('kw-ad-window'))kwAdOpen()},38000)}
+setTimeout(()=>{if(kwAdAutomatic)kwAdOpen()},2300);
+kwAdTimer=setInterval(()=>{if(kwAdAutomatic&&!document.getElementById('kw-ad-window'))kwAdOpen()},38000);
+</script><style>#kw-sfx-toggle{position:fixed;right:10px;bottom:46px;z-index:10002;background:#e9ffab;border:2px outset #fff;padding:5px 8px;font:11px Verdana,Arial;box-shadow:2px 2px #7777}#kw-sfx-toggle button{font:11px Verdana,Arial}</style>
+<div id="kw-sfx-toggle">♫ UI SOUNDS: <button id="kw-sfx-button" type="button">ON</button></div>
+<script>
+(function(){
+let ctx=null,enabled=true,lastHover=0,lastKey=0;
+const toggle=document.getElementById('kw-sfx-button');
+toggle.addEventListener('click',()=>{enabled=!enabled;toggle.textContent=enabled?'ON':'OFF';});
+function audio(){if(!enabled)return null;try{ctx=ctx||new (window.AudioContext||window.webkitAudioContext)();if(ctx.state==='suspended')ctx.resume();return ctx}catch(e){return null}}
+function blip(freq,duration,volume,type='sine'){const c=audio();if(!c)return;let o=c.createOscillator(),g=c.createGain(),t=c.currentTime;o.type=type;o.frequency.setValueAtTime(freq,t);o.frequency.exponentialRampToValueAtTime(Math.max(60,freq*.78),t+duration);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(volume,t+.004);g.gain.exponentialRampToValueAtTime(.0001,t+duration);o.connect(g).connect(c.destination);o.start(t);o.stop(t+duration+.005)}
+function clack(){const c=audio();if(!c)return;const len=Math.floor(c.sampleRate*.027),buffer=c.createBuffer(1,len,c.sampleRate),data=buffer.getChannelData(0);for(let i=0;i<len;i++)data[i]=(Math.random()*2-1)*Math.pow(1-i/len,3);let src=c.createBufferSource(),filter=c.createBiquadFilter(),gain=c.createGain();src.buffer=buffer;filter.type='bandpass';filter.frequency.value=950+Math.random()*450;filter.Q.value=.65;gain.gain.value=.038;src.connect(filter).connect(gain).connect(c.destination);src.start();}
+document.addEventListener('pointerover',e=>{if(!e.target.closest('button,a,select,[role="button"]'))return;let t=performance.now();if(t-lastHover<85)return;lastHover=t;blip(730,.035,.013,'square')},true);
+document.addEventListener('pointerdown',e=>{if(e.target.closest('button,a,select,[role="button"]'))blip(430,.06,.025,'triangle')},true);
+document.addEventListener('keydown',e=>{if(!e.target.matches('input,textarea,[contenteditable="true"]'))return;if(['Shift','Control','Alt','Meta','CapsLock','Tab'].includes(e.key))return;let t=performance.now();if(t-lastKey<32)return;lastKey=t;clack()},true);
+})();
+</script>
+<style>
+.kw-extra-bar{background:#d7ed9b;border-bottom:2px ridge #809a3b;padding:5px 10px;display:flex;flex-wrap:wrap;gap:6px}
+.kw-extra-bar button{font:bold 10px Verdana;background:#f7ffdc;padding:4px 6px}
+.kw-table{border-collapse:collapse;width:100%;background:#fff}.kw-table td,.kw-table th{border:1px solid #a5b47f;padding:6px;text-align:left}.kw-table th{background:#d8edaa}
+.kw-98{border:2px outset #eee;background:#e8e8d9;padding:10px;margin:8px 0}
+.kw-feed{height:200px;overflow:auto;background:#fff;border:2px inset #ddd;padding:8px;font:12px monospace}
+.kw-mini{font:10px Verdana;color:#5b663f}.kw-game{display:grid;grid-template-columns:repeat(4,55px);gap:5px;margin:10px 0}
+.kw-game button{height:51px;font-size:23px}.kw-mines{display:grid;grid-template-columns:repeat(7,29px);gap:2px}.kw-mines button{width:29px;height:29px;padding:0;font:bold 13px monospace}
+.kw-desk-clock{position:fixed;bottom:82px;right:10px;background:#e9ffab;border:2px outset #fff;padding:5px 8px;font:11px monospace;z-index:10002}
+#kw-pet{position:fixed;left:12px;bottom:12px;background:#edffac;border:3px outset #fff;padding:6px;z-index:10003;width:138px;box-shadow:3px 3px #6666}
+#kw-pet .face{font:38px Arial;color:#d3b300;text-align:center;cursor:pointer}
+#kw-screen{display:none;position:fixed;inset:0;background:#133400;z-index:20000;color:#e2ff9a;overflow:hidden}
+#kw-screen .bounce{position:absolute;font:bold 55px Arial;left:40%;top:35%;color:#d6ef46}
+#kw-screen button{position:absolute;right:20px;bottom:20px}
+@media(max-width:700px){#kw-pet{width:100px;bottom:5px;left:5px}#kw-pet .face{font-size:24px}.kw-desk-clock{display:none}}
+</style>
+<div id="kw-pet"><div class="kw-mini"><b>WELLIE PAL™</b> <a onclick="document.getElementById('kw-pet').style.display='none'">[x]</a></div><div class="face" onclick="kwPetTalk()">☺</div><div id="kw-pet-text" class="kw-mini">Have a productive day!</div><button onclick="kwPetFeed()" style="font-size:10px">GIVE SNACK</button></div>
+<div class="kw-desk-clock" id="kw-clock">KW/01: --:--:--</div>
+<div id="kw-screen"><div class="bounce" id="kw-bounce">☺ KIND//WELL</div><button onclick="kwWake()">RETURN TO WORK »</button></div>
+<script>
+(function(){
+const bar=document.createElement('div');bar.className='kw-extra-bar';bar.innerHTML=[['mail','✉ KIND//MAIL'],['chat','☏ KIND//CHAT'],['games','♠ BREAKROOM'],['voicemail','☎ VOICEMAIL'],['calendar','▦ CALENDAR'],['awards','★ AWARDS'],['bid','$ KIND//BID'],['classifieds','▤ CLASSIFIEDS'],['lost','? LOST & FOUND'],['complaints','! COMPLAINTS'],['handbook','▣ HANDBOOK'],['history','◷ ARCHIVES'],['points','☺ KIND//POINTS'],['radio','♫ RADIO']].map(x=>`<button onclick="show('${x[0]}')">${x[1]}</button>`).join('');document.querySelector('.nav').after(bar);
+})();
+const kwStore=(k,def)=>{try{return JSON.parse(localStorage.getItem('kw_'+k))??def}catch(e){return def}};
+const kwSave=(k,v)=>{try{localStorage.setItem('kw_'+k,JSON.stringify(v))}catch(e){}};
+let kwMail=kwStore('mail',[
+{id:1,from:'Dorothy Bell / Dispatch',sub:'RE: RE: RE: WHERE IS THE COFFEE',body:'I am asking everyone one last time to STOP using the green mug. It belongs to Dispatch. This is the seventh email.',date:'10/23/01',read:false,archived:false},
+{id:2,from:'Harold Finch / Records',sub:'Case 00738 — third notice',body:'Associate 0418, the subject disposition has been entered as RESOLVED but the completion packet is missing. The system cannot process an absence of paperwork. Please advise.',date:'10/22/01',read:false,archived:false},
+{id:3,from:'HR Office',sub:'AUTUMN FAMILY PICNIC',body:'Attendance is mandatory. Families are welcome. Do not bring work materials or discuss the nature of your assignments. We will be serving lemonade.',date:'10/19/01',read:true,archived:false},
+{id:4,from:'R. Keene / Field Services',sub:'Did they move my desk?',body:'They said I was transferred. Nobody has told me where. If you see my badge in the office please keep it for me. I will be back Monday.',date:'09/29/01',read:false,archived:false},
+{id:5,from:'Office of the President',sub:'A brighter future for all of us',body:'Thank you for another record-breaking quarter. The Board recognizes your contributions and reminds you that the terms of your employment remain in force.',date:'09/01/01',read:true,archived:false}
+]);
+let kwChat=kwStore('chat',[{who:'SYSTEM',msg:'Welcome to the #breakroom channel.'},{who:'dorothy_d',msg:'WHO TOOK THE GOOD STAPLER'},{who:'harold.records',msg:'This is not an appropriate channel for case numbers.'},{who:'mondayman',msg:'anyone seen robert keene lately?'},{who:'dorothy_d',msg:'Please stop asking.'}]);
+let kwPoints=kwStore('points',325),kwComplaints=kwStore('complaints',[]),kwBids=kwStore('bids',{}),kwCalendar=kwStore('calendar',[]);
+let kwGameCards=[],kwGameOpened=[],kwGameMatched=[],kwMineCells=[],kwMineOpened=[],kwMineOver=false,kwRadioCtx=null,kwRadioLoop=null,kwRadioOn=false;
+const kwEsc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const kwSect=t=>'<div class="section">'+t+'</div>';
+const kwBtn=(name,call)=>'<button onclick="'+call+'">'+name+'</button>';
+function kwRender(p){
+let h='';
+if(p==='mail'){h=kwSect('KIND//MAIL — ASSOCIATE INBOX')+'<div class="kw-98">'+kwBtn('INBOX','show("mail")')+' '+kwBtn('COMPOSE','kwCompose()')+' '+kwBtn('ARCHIVE VIEW','kwMailArchive()')+'<p class="kw-mini">Connected to KW-MAIL/4. Incoming correspondence is company property.</p><table class="kw-table"><tr><th>DATE</th><th>FROM</th><th>SUBJECT</th><th></th></tr>'+kwMail.filter(m=>!m.archived).map(m=>'<tr><td>'+m.date+'</td><td>'+kwEsc(m.from)+'</td><td><a onclick="kwReadMail('+m.id+')">'+(m.read?'':'<b>')+kwEsc(m.sub)+(m.read?'':'</b>')+'</a></td><td><a onclick="kwArchive('+m.id+')">Archive</a></td></tr>').join('')+'</table></div>'}
+if(p==='chat'){h=kwSect('KIND//CHAT — INTERNAL STAFF CHAT')+'<div class="kw-98"><b>CONNECTED: #breakroom</b><span class="kw-mini"> · 12 associates online · This channel is monitored.</span><div class="kw-feed" id="kw-chat-feed">'+kwChat.map(c=>'<div><b>&lt;'+kwEsc(c.who)+'&gt;</b> '+kwEsc(c.msg)+'</div>').join('')+'</div><input id="kw-chat-entry" class="field" maxlength="200" placeholder="Message #breakroom" onkeydown="if(event.key===\'Enter\')kwChatSend()">'+kwBtn('SEND','kwChatSend()')+' '+kwBtn('SWITCH TO #DISPATCH','kwChatChannel()')+'</div>'}
+if(p==='games'){h=kwSect('EMPLOYEE BREAKROOM — UNAUTHORIZED RECREATION')+'<div class="notice"><b>NOTICE FROM MANAGEMENT:</b> Recreational software may only be used during unpaid breaks.</div><div class="kw-98"><b>WELLIE MEMORY MATCH ☺</b> '+kwBtn('NEW GAME','kwNewMemory()')+'<div class="kw-game" id="kw-memory"></div><div id="kw-memory-msg" class="kw-mini">Match the eight pairs!</div></div><div class="kw-98"><b>MINESWEEPER — OFFICE EDITION</b> '+kwBtn('NEW BOARD','kwNewMines()')+'<p class="kw-mini">Find safe squares. Five hazards are hidden.</p><div class="kw-mines" id="kw-mines"></div><div id="kw-mines-msg" class="kw-mini"></div></div>'}
+if(p==='voicemail'){h=kwSect('TELEPHONE EXCHANGE / VOICEMAIL')+'<div class="kw-98"><b>EXTENSION 0418 — 4 NEW MESSAGES</b><p class="kw-mini">Voice recordings are synthesized by the terminal.</p>'+[['Dorothy / Dispatch','Associate 0418, pick up your extension. Your case file has been sitting on my desk since Tuesday.'],['Harold / Records','This is Harold. I need the closure form, not another note that says done.'],['Unknown extension','Hello? Is Robert there? They said he was transferred. His car is still in the lot.'],['Human Resources','Reminder: your mandatory wellness appointment is tomorrow. Thank you for choosing KIND//WELL.']].map((m,i)=>'<div class="logline"><b>MESSAGE '+(i+1)+' — '+m[0]+'</b><br>'+kwBtn('▶ PLAY','kwSpeak('+JSON.stringify(m[1])+')')+' '+kwBtn('■ STOP','speechSynthesis.cancel()')+'<p class="kw-mini">'+m[1]+'</p></div>').join('')+'</div>'}
+if(p==='calendar'){h=kwSect('CORPORATE CALENDAR / OCT–NOV 2001')+'<div class="kw-98"><b>UPCOMING EVENTS</b>'+[['OCT 27','Mandatory safety seminar'],['OCT 31','Office costume day — no uniforms'],['NOV 04','Case 00741 paperwork deadline'],['NOV 06','Associate 0418 annual review'],['NOV 12','Company picnic (mandatory)'],...kwCalendar.map(e=>[e.date,e.name])].map(x=>'<div class="logline"><b>'+kwEsc(x[0])+'</b> — '+kwEsc(x[1])+'</div>').join('')+'<hr><b>ADD PERSONAL REMINDER</b><input class="field" id="kw-event-date" placeholder="DATE (e.g. NOV 20)"><input class="field" id="kw-event-name" placeholder="Reminder">'+kwBtn('ADD REMINDER','kwAddEvent()')+'</div>'}
+if(p==='awards'){h=kwSect('EMPLOYEE OF THE MONTH / HONOR ROLL')+'<div class="hero"><span style="font-size:65px;color:#d4b000">★ ☺ ★</span><div><h1>Congratulations, team!</h1><p>Good work deserves recognition.</p></div></div>'+[['OCT 2001','Evelyn Price','Excellence in compliance'],['SEP 2001','Evelyn Price','Excellence in compliance'],['AUG 2001','Evelyn Price','Excellence in compliance'],['JUL 2001','[PHOTOGRAPH UNAVAILABLE]','Outstanding field contribution'],['JUN 2001','Evelyn Price','Excellence in compliance']].map(a=>'<div class="work"><b>'+a[0]+' — '+a[1]+'</b><br><span class="tiny">'+a[2]+'</span></div>').join('')}
+if(p==='bid'){h=kwSect('KIND//BID — EMPLOYEE SURPLUS AUCTIONS')+'<div class="notice">Company property may not be resold outside approved channels. All bids are final.</div>'+[['B1','Office chair, slightly squeaky',12],['B2','Box of 46 unused WELLIE pins',8],['B3','Former associate desk lamp',14],['B4','Unclaimed filing cabinet, locked',26],['B5','Corporate training VHS tapes (set of 7)',9]].map(a=>'<div class="work"><b>'+a[1]+'</b><br>Current bid: $'+(kwBids[a[0]]||a[2])+'.00<br>'+kwBtn('BID +$1','kwBid("'+a[0]+'",'+a[2]+')')+'</div>').join('')}
+if(p==='classifieds'){h=kwSect('STAFF CLASSIFIEDS / COMMUNITY BOARD')+[['FOR SALE','1997 beige desktop monitor. Works most days. Ask for Dan in Records.'],['WANTED','Roommate near West Street. Must be okay with unpredictable hours.'],['TRADE','One new WELLIE mug for two packs of printer paper.'],['NOTICE','Whoever has the office fish, please bring it back.'],['FOUND','A silver badge with no employee number. Human Resources says not to ask.']].map(a=>'<div class="work"><b>'+a[0]+'</b><p>'+a[1]+'</p>'+kwBtn('CONTACT POSTER','notice("Your inquiry has been forwarded to the bulletin board moderator.")')+'</div>').join('')}
+if(p==='lost'){h=kwSect('LOST & FOUND / PROPERTY WINDOW')+'<table class="kw-table"><tr><th>TAG</th><th>ITEM</th><th>FOUND</th><th>STATUS</th></tr>'+[['LF-101','Umbrella, green','Lobby','UNCLAIMED'],['LF-102','One work boot','Garage','UNCLAIMED'],['LF-103','Keys marked R.K.','Dispatch','HOLD'],['LF-104','Photograph of a family','Records','RESTRICTED'],['LF-105','Half a birthday cake','Breakroom','DISPOSED'],['LF-106','ID badge #0440','East entrance','RESTRICTED']].map(a=>'<tr>'+a.map(c=>'<td>'+c+'</td>').join('')+'</tr>').join('')+'</table>'}
+if(p==='complaints'){h=kwSect('EMPLOYEE COMPLAINTS / GRIEVANCE DESK')+'<div class="notice"><b>WE VALUE YOUR FEEDBACK! ☺</b><p>Complaints are reviewed in the order they are received. Submitting a complaint does not guarantee a response.</p><label>Category</label><select class="field" id="kw-grievance-type"><option>Payroll</option><option>Colleague conduct</option><option>Unsafe working conditions</option><option>Missing personnel</option><option>Other</option></select><label>Describe your concern</label><textarea class="field" id="kw-grievance" rows="4"></textarea>'+kwBtn('SUBMIT COMPLAINT','kwComplain()')+'</div><p class="kw-mini">Complaints submitted from this terminal: '+kwComplaints.length+'</p>'}
+if(p==='handbook'){h=kwSect('EMPLOYEE HANDBOOK — REVISION 11')+[['1. Attendance','Associates are expected to report for their assigned shifts. Unexplained absence may result in a personnel review.'],['2. Case confidentiality','Subject identities, dispositions, and supporting documents must remain within approved channels.'],['3. Personal relationships','Associates must disclose relationships that may affect professional judgment.'],['4. Equipment accountability','Every issued item must be returned or documented. Payroll deductions may apply.'],['5. Workplace wellness','Mandatory counseling is available. Counseling attendance is not considered grounds for reassignment.'],['6. Separation from service','The corporation reserves the right to determine the timing and conditions of an associate’s separation.'],['7. Media inquiries','Employees must not speak on behalf of KIND//WELL without written approval.'],['8. Records retention','Certain files are permanently sealed. Do not attempt to retrieve sealed files.']].map(a=>'<div class="kw-98"><b>'+a[0]+'</b><p>'+a[1]+'</p></div>').join('')}
+if(p==='history'){h=kwSect('KIND//WELL ARCHIVE — LEGACY FILE SERVER')+'<div class="notice"><b>ARCHIVE INDEX / 1976–2001</b><p class="kw-mini">Some original documents have been converted from paper. Dates and employee numbers may not be accurate.</p></div>'+[['1976','Incorporation papers','A small regional supply cooperative opens under the name Kindwell Distribution.'],['1987','Staff newsletter','Congratulations to E. Price on fifteen years of service.'],['1994','Records modernization','All prior case numbers were migrated to the new system. Some references are unavailable.'],['1996','Company website','WELCOME TO KINDWELL ON THE WORLD WIDE WEB! Have a pleasant visit.'],['1998','Quarterly achievements','Associate #0440 receives a special commendation.'],['2001','Archive integrity notice','CASE 000001 does not exist. Please discontinue requests for this record.']].map(a=>'<div class="logline"><a onclick="kwArchiveDoc('+JSON.stringify(a[0])+','+JSON.stringify(a[1])+','+JSON.stringify(a[2])+')">'+a[0]+' — '+a[1]+'</a></div>').join('')}
+if(p==='points'){h=kwSect('KIND//POINTS — ASSOCIATE REWARDS')+'<div class="hero"><div><h1>'+kwPoints+' POINTS ☺</h1><p>Thank you for your continued service! Redeem your points for cheerful workplace rewards.</p></div><span style="font-size:60px">★</span></div>'+[['WELLIE sticker sheet',25],['Extra breakroom coffee token',50],['Company pencil set',75],['One casual Friday voucher',150],['Certificate of appreciation',250],['Priority parking request',500]].map(a=>'<div class="work"><b>'+a[0]+'</b><br>'+a[1]+' points<br>'+kwBtn('REDEEM','kwRedeem('+a[1]+','+JSON.stringify(a[0])+')')+'</div>').join('')}
+if(p==='radio'){h=kwSect('WELLIE RADIO — CORPORATE BROADCAST')+'<div class="hero"><div><h1>♫ The Sound of a Productive Day!</h1><p>Courtesy of KIND//WELL Associate Relations.</p></div><span style="font-size:60px;color:#d3a800">☺</span></div><div class="kw-98"><b>KWFM / 98.1 — HOLD MUSIC</b><p class="kw-mini">Original chiptune synthesized on this computer.</p>'+kwBtn('▶ PLAY RADIO','kwRadioStart()')+' '+kwBtn('■ STOP RADIO','kwRadioStop()')+'<p id="kw-radio-status">OFF AIR</p></div>'}
+if(!h)return false;
+document.getElementById('main').innerHTML=h;
+if(p==='games'){kwNewMemory();kwNewMines()}
+window.scrollTo(0,0);return true;
+}
+const kwOriginalShow=show;show=function(p){if(!kwRender(p))kwOriginalShow(p)};
+function kwReadMail(id){let m=kwMail.find(x=>x.id===id);m.read=true;kwSave('mail',kwMail);modal('KIND//MAIL — '+m.sub,'<b>From:</b> '+kwEsc(m.from)+'<br><b>Date:</b> '+m.date+'<hr><p style="white-space:pre-wrap">'+kwEsc(m.body)+'</p>'+kwBtn('REPLY','kwReply('+id+')')+' '+kwBtn('ARCHIVE','kwArchive('+id+')'))}
+function kwReply(id){let m=kwMail.find(x=>x.id===id);modal('REPLY — '+m.sub,'<textarea class="field" rows="5" id="kw-reply-text" placeholder="Enter reply..."></textarea>'+kwBtn('SEND','kwSendReply('+id+')'))}
+function kwSendReply(id){let v=document.getElementById('kw-reply-text').value.trim();if(!v)return;kwMail.unshift({id:Date.now(),from:'YOU / OUTBOX',sub:'RE: '+kwMail.find(x=>x.id===id).sub,body:v,date:'TODAY',read:true,archived:false});kwSave('mail',kwMail);closeModal();show('mail');notice('Your reply has been filed in the local outbox.')}
+function kwCompose(){modal('COMPOSE MESSAGE','<input id="kw-mail-to" class="field" placeholder="To: employee / department"><input id="kw-mail-sub" class="field" placeholder="Subject"><textarea id="kw-mail-body" class="field" rows="5" placeholder="Message"></textarea>'+kwBtn('SEND','kwSendCompose()'))}
+function kwSendCompose(){let to=document.getElementById('kw-mail-to').value,sub=document.getElementById('kw-mail-sub').value,body=document.getElementById('kw-mail-body').value;if(!to||!body)return notice('Complete the recipient and message fields.');kwMail.unshift({id:Date.now(),from:'YOU → '+to,sub:sub||'(no subject)',body,date:'TODAY',read:true,archived:false});kwSave('mail',kwMail);closeModal();show('mail')}
+function kwArchive(id){kwMail.find(x=>x.id===id).archived=true;kwSave('mail',kwMail);closeModal();show('mail')}
+function kwMailArchive(){modal('ARCHIVED CORRESPONDENCE',kwMail.filter(m=>m.archived).map(m=>'<div class="logline"><a onclick="kwReadMail('+m.id+')">'+kwEsc(m.sub)+'</a></div>').join('')||'Archive is empty.')}
+function kwChatSend(){let el=document.getElementById('kw-chat-entry');let v=el.value.trim();if(!v)return;kwChat.push({who:'associate0418',msg:v});kwSave('chat',kwChat);show('chat');let f=document.getElementById('kw-chat-feed');f.scrollTop=f.scrollHeight}
+function kwChatChannel(){notice('Access to #dispatch requires supervisor authorization.')}
+function kwSpeak(t){if(!('speechSynthesis' in window))return notice('Audio playback is unavailable on this terminal.');speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.rate=.86;u.pitch=.85;speechSynthesis.speak(u)}
+function kwAddEvent(){let date=document.getElementById('kw-event-date').value.trim(),name=document.getElementById('kw-event-name').value.trim();if(!date||!name)return;kwCalendar.push({date,name});kwSave('calendar',kwCalendar);show('calendar')}
+function kwBid(id,base){kwBids[id]=(kwBids[id]||base)+1;kwSave('bids',kwBids);show('bid')}
+function kwComplain(){let t=document.getElementById('kw-grievance').value.trim();if(!t)return;kwComplaints.push({type:document.getElementById('kw-grievance-type').value,text:t});kwSave('complaints',kwComplaints);show('complaints');notice('Thank you! Your concern has been assigned reference GR-'+String(5000+kwComplaints.length)+'. Current response estimate: 8–12 weeks. ☺')}
+function kwArchiveDoc(y,t,b){modal('ARCHIVED RECORD / '+y,'<h3>'+kwEsc(t)+'</h3><div class="kw-98">'+kwEsc(b)+'</div><p class="kw-mini">This document is a recovered copy. Authenticity has not been verified.</p>')}
+function kwRedeem(n,name){if(kwPoints<n)return notice('Insufficient KIND//POINTS. Keep up the good work!');kwPoints-=n;kwSave('points',kwPoints);show('points');notice(name+' redemption submitted. Approval pending. ☺')}
+function kwNewMemory(){let vals=['☺','★','✉','☎','▣','☼','♣','♥'];kwGameCards=[...vals,...vals].sort(()=>Math.random()-.5);kwGameOpened=[];kwGameMatched=[];kwDrawMemory()}
+function kwDrawMemory(){let el=document.getElementById('kw-memory');if(!el)return;el.innerHTML=kwGameCards.map((v,i)=>'<button onclick="kwFlip('+i+')" '+(kwGameMatched.includes(i)?'disabled':'')+'>'+(kwGameOpened.includes(i)||kwGameMatched.includes(i)?v:'?')+'</button>').join('')}
+function kwFlip(i){if(kwGameOpened.length>=2||kwGameMatched.includes(i)||kwGameOpened.includes(i))return;kwGameOpened.push(i);kwDrawMemory();if(kwGameOpened.length===2){let [a,b]=kwGameOpened;if(kwGameCards[a]===kwGameCards[b]){kwGameMatched.push(a,b);kwGameOpened=[];kwDrawMemory();if(kwGameMatched.length===16)document.getElementById('kw-memory-msg').textContent='PERFECT MATCH! WELLIE IS PROUD OF YOU! ☺'}else setTimeout(()=>{kwGameOpened=[];kwDrawMemory()},650)}}
+function kwNewMines(){kwMineCells=Array(49).fill(0);let count=0;while(count<5){let i=Math.floor(Math.random()*49);if(kwMineCells[i]!==-1){kwMineCells[i]=-1;count++}}kwMineOpened=[];kwMineOver=false;kwDrawMines()}
+function kwNeighbors(i){let x=i%7,y=Math.floor(i/7),n=[];for(let dx=-1;dx<=1;dx++)for(let dy=-1;dy<=1;dy++){if(!dx&&!dy)continue;let xx=x+dx,yy=y+dy;if(xx>=0&&xx<7&&yy>=0&&yy<7)n.push(yy*7+xx)}return n}
+function kwDrawMines(){let el=document.getElementById('kw-mines');if(!el)return;el.innerHTML=kwMineCells.map((v,i)=>'<button onclick="kwMine('+i+')" '+(kwMineOpened.includes(i)||kwMineOver?'disabled':'')+'>'+(kwMineOpened.includes(i)||kwMineOver?(v===-1?'✸':kwNeighbors(i).filter(j=>kwMineCells[j]===-1).length||' '):'')+'</button>').join('')}
+function kwMine(i){if(kwMineOver||kwMineOpened.includes(i))return;if(kwMineCells[i]===-1){kwMineOver=true;document.getElementById('kw-mines-msg').textContent='ASSIGNMENT FAILED. TRY AGAIN!';kwDrawMines();return}let queue=[i];while(queue.length){let j=queue.pop();if(kwMineOpened.includes(j)||kwMineCells[j]===-1)continue;kwMineOpened.push(j);if(kwNeighbors(j).every(k=>kwMineCells[k]!==-1))queue.push(...kwNeighbors(j).filter(k=>!kwMineOpened.includes(k)))}kwDrawMines();if(kwMineOpened.length===44)document.getElementById('kw-mines-msg').textContent='ALL CLEAR! EXCELLENT WORK!'}
+function kwRadioStart(){if(kwRadioOn)return;try{kwRadioCtx=kwRadioCtx||new (window.AudioContext||window.webkitAudioContext)();kwRadioCtx.resume();kwRadioOn=true;document.getElementById('kw-radio-status').textContent='ON AIR — KWFM 98.1';let notes=[392,493.88,587.33,493.88,440,523.25,659.25,523.25,392,440,493.88,587.33];let idx=0;function tick(){if(!kwRadioOn)return;let c=kwRadioCtx,o=c.createOscillator(),g=c.createGain(),t=c.currentTime;o.type='triangle';o.frequency.value=notes[idx++%notes.length];g.gain.setValueAtTime(.0001,t);g.gain.linearRampToValueAtTime(.028,t+.02);g.gain.exponentialRampToValueAtTime(.0001,t+.26);o.connect(g).connect(c.destination);o.start(t);o.stop(t+.27)}tick();kwRadioLoop=setInterval(tick,330)}catch(e){notice('Radio unavailable on this terminal.')}}
+function kwRadioStop(){kwRadioOn=false;if(kwRadioLoop)clearInterval(kwRadioLoop);let el=document.getElementById('kw-radio-status');if(el)el.textContent='OFF AIR'}
+let kwPetMood=kwStore('pet',2);
+function kwPetTalk(){let lines=['A complete form is a happy form! ☺','Have you seen Robert? Just kidding!','Your smile has been logged.','Please remember your next review.','Great work! Management is watching.','I love my job! Do you?'];document.getElementById('kw-pet-text').textContent=lines[Math.floor(Math.random()*lines.length)]}
+function kwPetFeed(){kwPetMood++;kwSave('pet',kwPetMood);document.getElementById('kw-pet-text').textContent=kwPetMood%3?'Yum! Thank you, associate!':'You are my favorite employee! ☺'}
+setInterval(()=>{let d=new Date();document.getElementById('kw-clock').textContent='KW/01: '+d.toLocaleTimeString();},1000);
+let kwIdle=Date.now(),kwSaver=false,kwSaverX=40,kwSaverY=35,kwDX=1,kwDY=1;
+function kwWake(){kwSaver=false;document.getElementById('kw-screen').style.display='none';kwIdle=Date.now()}
+['pointermove','keydown','pointerdown','touchstart'].forEach(t=>document.addEventListener(t,()=>{kwIdle=Date.now();if(kwSaver)kwWake()},{passive:true}));
+setInterval(()=>{if(!kwSaver&&Date.now()-kwIdle>120000){kwSaver=true;document.getElementById('kw-screen').style.display='block'}if(kwSaver){kwSaverX+=kwDX;kwSaverY+=kwDY;if(kwSaverX>72||kwSaverX<1)kwDX*=-1;if(kwSaverY>80||kwSaverY<1)kwDY*=-1;document.getElementById('kw-bounce').style.left=kwSaverX+'%';document.getElementById('kw-bounce').style.top=kwSaverY+'%'}},100);
+const kwOldSearch=search;search=function(){kwOldSearch()};
+</script>
+<style>
+/* Classic desktop pointer: native arrow and hand, no animated mascot cursor */
+html,body,body *{cursor:default!important}
+a,button,[onclick],select{cursor:pointer!important}
+input,textarea{cursor:text!important}
+.kw-channels{display:flex;gap:5px;flex-wrap:wrap;margin:9px 0}
+.kw-channels button.active{background:#b5e752;border-style:inset}
+.kw-chat-message{padding:4px 3px;border-bottom:1px dotted #d5dfc4}
+.kw-chat-message .who{color:#32600b;font-weight:bold}
+.kw-chat-message .stamp{color:#89906f;font-size:10px}
+.kw-point-pack{display:inline-block;vertical-align:top;width:46%;min-width:160px;background:#fff;border:2px outset #d8e8a3;margin:4px;padding:12px}
+.kw-receipt{background:#fff;border:1px dashed #657a41;padding:15px;font-family:monospace;line-height:1.8}
+</style>
+<script>
+/* Chat channels and optional new associate lore */
+const kwChannelSeeds={
+'breakroom':[
+['dorothy_d','Whoever borrowed the green stapler: it has my NAME on it.'],
+['harold.records','There is no need to reply-all about stationery.'],
+['rookie_q','hi sorry!! are we allowed to ask questions here?'],
+['dorothy_d','You just did.'],
+['rookie_q','okay so what does subject disposition mean exactly'],
+['harold.records','Please complete U-114.'],
+['rookie_q','i did but it just says refer to handbook and the handbook says refer to U-114'],
+['mondayman','welcome to the company'],
+['j.cross_hr','Reminder: the breakroom refrigerator is NOT for storing evidence envelopes.'],
+['rookie_q','wait why would anyone put those in the fridge'],
+['dorothy_d','Can we have ONE normal lunch.'],
+['dispatch_bell','There is a mandatory team photo Friday. Attendance will be recorded.'],
+['rookie_q','do we smile in the photo'],
+['harold.records','Yes.']
+],
+'dispatch':[
+['dispatch_bell','Case routing update: all pending packets go through Desk 4.'],
+['field_062','My authorization has the wrong date again.'],
+['rookie_q','if a subject calls the office do we answer?'],
+['dispatch_bell','You transfer the call to Dispatch.'],
+['rookie_q','but you ARE dispatch'],
+['dispatch_bell','Correct.'],
+['field_062','Is there a reason 00741 has three different deadlines?'],
+['dispatch_bell','The latest one supersedes the previous two.'],
+['rookie_q','which one is the latest one'],
+['dispatch_bell','See your assignment notice.']
+],
+'records':[
+['harold.records','Do not submit a closure report with only the word done.'],
+['rookie_q','what if it is done'],
+['harold.records','Then fill out the form.'],
+['rookie_q','is the date the day i write the form or the day the case was resolved'],
+['harold.records','The form has separate boxes for both.'],
+['rookie_q','OH'],
+['harold.records','Please stop writing OH in the disposition field.'],
+['archive_clerk','The request for Case 000001 has been rejected again.'],
+['rookie_q','what is case 000001'],
+['archive_clerk','Not a valid case number.']
+],
+'afterhours':[
+['nightowl_77','Anyone else here at 2 AM?'],
+['rookie_q','me!!'],
+['nightowl_77','Why are you still here?'],
+['rookie_q','i wanted to ask where the extra printer paper is'],
+['nightowl_77','That could have waited until morning.'],
+['rookie_q','i also wanted to ask why the west hallway is locked'],
+['nightowl_77','Go home.'],
+['system','User nightowl_77 has signed off.'],
+['rookie_q','okay goodnight!!!']
+],
+'helpdesk':[
+['it_support','Before reporting an error, please restart your workstation.'],
+['rookie_q','my computer says the employee directory has someone who hasnt been born yet'],
+['it_support','Please clear your browser cache.'],
+['rookie_q','i did and now there are two of them'],
+['it_support','Ticket closed: user error.'],
+['dorothy_d','The printer is making the grinding noise again.'],
+['it_support','Please restart your workstation.']
+]};
+let kwActiveChannel='breakroom';
+let kwChatRooms=kwStore('chatrooms',{});
+for(const [channel,lines] of Object.entries(kwChannelSeeds)){
+if(!Array.isArray(kwChatRooms[channel]))kwChatRooms[channel]=lines.map(([who,msg],i)=>({who,msg,stamp:'10/'+String(17+Math.floor(i/4)).padStart(2,'0')+'/01'}));
+}
+kwSave('chatrooms',kwChatRooms);
+function kwChatView(){
+let rooms=['breakroom','dispatch','records','afterhours','helpdesk'];
+return kwSect('KIND//CHAT — INTERNAL STAFF CHAT')+
+'<div class="kw-98"><b>KW CHAT 2.4</b> <span class="kw-mini">· 12 users online · Archived channels</span>'+
+'<div class="kw-channels">'+rooms.map(c=>'<button class="'+(kwActiveChannel===c?'active':'')+'" onclick="kwSelectChannel(\''+c+'\')">#'+c+'</button>').join('')+'</div>'+
+'<div class="kw-feed" id="kw-chat-feed" style="height:320px">'+kwChatRooms[kwActiveChannel].map(m=>'<div class="kw-chat-message"><span class="stamp">['+kwEsc(m.stamp||'TODAY')+']</span> <span class="who">&lt;'+kwEsc(m.who)+'&gt;</span> '+kwEsc(m.msg)+'</div>').join('')+'</div>'+
+'<input id="kw-chat-entry" class="field" maxlength="300" placeholder="Message #'+kwActiveChannel+'" onkeydown="if(event.key===\'Enter\')kwChatSend()">'+
+'<button onclick="kwChatSend()">SEND »</button> <span class="kw-mini">Messages saved to this browser.</span></div>'+
+'<div class="notice"><b>WELCOME, NEW ASSOCIATES!</b><br>Questions are encouraged. Please consult the handbook before asking questions that have already been answered in the handbook. ☺</div>';
+}
+function kwSelectChannel(c){kwActiveChannel=c;show('chat')}
+kwChatSend=function(){let el=document.getElementById('kw-chat-entry');if(!el||!el.value.trim())return;kwChatRooms[kwActiveChannel].push({who:'associate0418',msg:el.value.trim(),stamp:'TODAY'});kwSave('chatrooms',kwChatRooms);show('chat');let f=document.getElementById('kw-chat-feed');f.scrollTop=f.scrollHeight};
+const kwPreviousRender=kwRender;
+kwRender=function(p){
+if(p==='chat'){document.getElementById('main').innerHTML=kwChatView();window.scrollTo(0,0);return true}
+if(p==='topup'){kwTopupView();return true}
+if(p==='pointreceipt'){kwReceiptView();return true}
+return kwPreviousRender(p)
+};
+let kwSelectedPack=0;
+const kwPacks=[{points:100,price:1.99,name:'STARTER'},{points:350,price:4.99,name:'POPULAR'},{points:800,price:9.99,name:'VALUE'},{points:2000,price:19.99,name:'ASSOCIATE PLUS'}];
+function kwTopupView(){
+let h=kwSect('KIND//POINTS — ADD POINTS')+
+'<div class="hero"><div><h1>More points. More smiles! ☺</h1><p>Current balance: <b>'+kwPoints+' points</b></p></div><span style="font-size:66px;color:#d0ad00">☺</span></div>'+
+'<div class="notice"><b>SELECT A POINTS PACKAGE</b><br>Corporate rewards checkout · Internal account 0418</div>'+
+'<div>'+kwPacks.map((p,i)=>'<div class="kw-point-pack"><b>'+p.name+'</b><h2 style="margin:8px 0;color:#356b08">'+p.points+' POINTS</h2><b>$'+p.price.toFixed(2)+'</b><p><button onclick="kwSelectPack('+i+')">'+(kwSelectedPack===i?'✓ SELECTED':'SELECT PACKAGE')+'</button></p></div>').join('')+'</div>'+
+'<div class="kw-98"><b>ORDER SUMMARY</b><hr><p>'+kwPacks[kwSelectedPack].points+' KIND//POINTS — $'+kwPacks[kwSelectedPack].price.toFixed(2)+'</p><p class="kw-mini">This checkout uses a pretend company credit balance. No card number, bank details, or payment service is required.</p><button onclick="kwCompleteTopup()">COMPLETE CHECKOUT »</button></div>';
+document.getElementById('main').innerHTML=h;window.scrollTo(0,0);
+}
+function kwSelectPack(i){kwSelectedPack=i;show('topup')}
+let kwReceipts=kwStore('pointreceipts',[]);
+function kwCompleteTopup(){
+let p=kwPacks[kwSelectedPack];
+let receipt={number:'KW-'+String(Date.now()).slice(-8),points:p.points,price:p.price,date:new Date().toLocaleString()};
+kwPoints+=p.points;kwSave('points',kwPoints);
+kwReceipts.unshift(receipt);kwSave('pointreceipts',kwReceipts);
+show('pointreceipt');
+}
+function kwReceiptView(){
+let r=kwReceipts[0];
+document.getElementById('main').innerHTML=kwSect('KIND//POINTS — TRANSACTION COMPLETE')+
+(r?'<div class="kw-receipt"><h2>☺ THANK YOU, ASSOCIATE!</h2><b>RECEIPT '+r.number+'</b><br>Date: '+kwEsc(r.date)+'<br>Item: '+r.points+' KIND//POINTS<br>Displayed total: $'+r.price.toFixed(2)+'<br>Payment method: COMPANY SIMULATION CREDIT<br><b>NEW BALANCE: '+kwPoints+' POINTS</b><hr>YOUR HAPPINESS IS OUR BUSINESS. ☺</div>':'No receipt available.')+
+'<p><button onclick="show(\'points\')">RETURN TO REWARDS »</button> <button onclick="show(\'topup\')">ADD MORE POINTS »</button></p>';
+}
+const kwRenderBeforeTopup=kwRender;
+kwRender=function(p){
+if(p==='points'){
+let result=kwRenderBeforeTopup(p);
+let el=document.getElementById('main');
+el.insertAdjacentHTML('afterbegin','<div class="notice"><b>NEED MORE KIND//POINTS?</b> ☺ <button onclick="show(\'topup\')">ADD POINTS / CHECKOUT »</button> <span class="kw-mini">No real payment required.</span></div>');
+return result;
+}
+return kwRenderBeforeTopup(p)
+};
+</script>
+
+<style>
+.kw-courier-head{background:#ffe23b;border:3px ridge #a0a039;color:#151515;padding:14px;display:flex;align-items:center;gap:15px}
+.kw-courier-logo{background:#ffdc21;border:3px solid #111;border-radius:50%;font:bold 45px Arial;padding:10px;color:#111}
+.kw-ticket{background:#fff;border:2px inset #b3c78e;margin:10px 0;padding:10px}
+.kw-ticket-note{border-left:4px solid #e8ce35;background:#f7f8e9;padding:8px;margin:7px 0}
+.kw-timeline{border-left:3px solid #7a9a43;margin:12px;padding-left:15px}.kw-timeline div{padding:7px;border-bottom:1px dotted #b4c597}
+.kw-courier-tag{background:#ffde27;color:#111;padding:2px 5px;font-weight:bold;font-size:10px}
+</style>
+<script>
+/* Courier is an experienced associate who knows precisely what the company does. */
+const kwCourier={handle:'courier_q',department:'Express Fulfillment / Associate Support',id:'EXP-086',status:'ACTIVE',uniform:'Yellow polo, black collar and trim, black cargo shorts, black work shoes, yellow smiley mask, green-and-yellow delivery backpack'};
+const kwCourierOldSeeds=kwChannelSeeds;
+for(const room of Object.keys(kwChatRooms)){
+ kwChatRooms[room]=kwChatRooms[room].map(m=>({...m,who:m.who==='rookie_q'?'courier_q':m.who}));
+}
+const kwCourierConvos={
+ breakroom:[['courier_q','hellooo i have returned from my route!! did anyone miss me'],['dorothy_d','Did you deliver the Records package?'],['courier_q','yes!! got a signature and everything. btw why did he request six rolls of tape this time'],['harold.records','That information is not relevant to your position.'],['courier_q','i know!! i was just curious'],['courier_q','also whoever rated me four stars last week i remember your address ♡'],['j.cross_hr','Please do not discuss customer ratings in the breakroom.']],
+ dispatch:[['courier_q','delivery for 0418 is on the way!! do they prefer the front door or side entrance'],['dispatch_bell','Use the authorized entrance listed on the requisition.'],['courier_q','i know what it says i was asking what they PREFER'],['field_062','Why do you know where I live?'],['courier_q','because i deliver your packages silly'],['dispatch_bell','Courier, please return to the logistics channel.']],
+ records:[['courier_q','hii! why is the return label marked subject property instead of company property'],['harold.records','Because that is the correct classification.'],['courier_q','ohhh okay. did the subject get a receipt too'],['harold.records','No.'],['courier_q','aw :(']],
+ afterhours:[['courier_q','late route tonight!! anybody need snacks from the gas station'],['nightowl_77','You are not authorized to stop during active dispatch.'],['courier_q','i already stopped! i got you the sour ones'],['nightowl_77','...leave them at reception.']],
+ helpdesk:[['courier_q','hi!! support desk is open and i have my headset on'],['it_support','This channel is for technical issues.'],['courier_q','okay but what if their package tracker is broken'],['it_support','That would be technical.'],['courier_q','YAY'],['dorothy_d','The office printer is still broken.'],['courier_q','have you tried being nice to it']]
+};
+for(const [room,lines] of Object.entries(kwCourierConvos)){
+ if(!kwChatRooms[room].some(m=>m.msg==='hellooo i have returned from my route!! did anyone miss me') || room!=='breakroom'){
+  if(!kwChatRooms[room].some(m=>m.msg===lines[0][1]))kwChatRooms[room].push(...lines.map(([who,msg])=>({who,msg,stamp:'10/24/01'})));
+ }
+}
+kwSave('chatrooms',kwChatRooms);
+let kwTickets=kwStore('supporttickets',[]),kwDeliveries=kwStore('deliveries',[
+{id:'KW-R4102',item:'Warehouse requisition / 3 parcels',status:3,notes:'Signature obtained! Nice to see you again!! ☺',date:'10/23/2001'},
+{id:'KW-R4098',item:'Field supplies / 1 parcel',status:4,notes:'Package delivered. Why was the porch light off at 3 PM?',date:'10/18/2001'}]);
+const kwTrackSteps=['REQUISITION RECEIVED','PACKED AT WAREHOUSE B','OUT FOR DELIVERY','DELIVERED / SIGNATURE REQUESTED','DELIVERY CONFIRMED'];
+function kwCourierBanner(){return '<div class="kw-courier-head"><div class="kw-courier-logo">☺</div><div><b style="font-size:21px">KIND//WELL <i>Express</i></b><br><b>DELIVERING PEACE OF MIND.</b><br><small>Assigned courier: '+kwCourier.handle+' · '+kwCourier.id+'</small><br><small>Customer satisfaction ★★★★★</small></div></div>'}
+function kwHelpView(){
+ let h=kwSect('KIND//HELP — ASSOCIATE SUPPORT')+kwCourierBanner()+'<div class="kw-98"><b>YOUR SUPPORT REPRESENTATIVE IS AVAILABLE ☺</b><p><span class="kw-courier-tag">ONLINE</span> <b>'+kwCourier.handle+'</b> — Express Fulfillment & Associate Support</p><p class="kw-mini">Questions about deliveries, supply orders, return labels, or just where your package went? Ask away!</p><label>What do you need help with?</label><select class="field" id="kw-help-type"><option>Package delayed</option><option>Wrong item received</option><option>Request a delivery update</option><option>Return or exchange</option><option>Something else</option></select><textarea id="kw-help-msg" class="field" rows="3" placeholder="Tell me what happened!! ☺"></textarea><button onclick="kwSendHelp()">SUBMIT HELP REQUEST »</button></div>';
+ h+='<div class="section">YOUR SUPPORT TICKETS</div>';
+ if(!kwTickets.length)h+='<div class="work">No tickets yet. Your courier is waiting to hear from you!</div>';
+ h+=kwTickets.slice().reverse().map(t=>'<div class="kw-ticket"><b>TICKET '+t.id+'</b> <span class="kw-courier-tag">ANSWERED</span><br><span class="kw-mini">'+kwEsc(t.type)+' · '+kwEsc(t.date)+'</span><p><b>You:</b> '+kwEsc(t.msg)+'</p><div class="kw-ticket-note"><b>'+kwCourier.handle+' / SUPPORT:</b> '+kwEsc(t.reply)+'</div><button onclick="kwHelpFollowup('+JSON.stringify(t.id)+')">ASK A FOLLOW-UP »</button></div>').join('');
+ document.getElementById('main').innerHTML=h;window.scrollTo(0,0)
+}
+function kwSupportReply(type,msg){let t=msg.toLowerCase();if(t.includes('where')||type==='Request a delivery update')return 'hii!! i can check that!! i am actually the one driving the van today. did you want me to ring the doorbell or just knock? also how did the last assignment go??';if(type==='Wrong item received')return 'oh nooo!! i packed that myself :( can you check the label on the side? i can bring a replacement! also was the item wrong-wrong or just not what you expected';if(type==='Package delayed')return 'SORRYYYY the traffic was awful and i had three stops!! your delivery is still assigned to me. do you need it for something urgent? actually wait dont answer that i know what we do here lol';if(type==='Return or exchange')return 'of course!! please keep the original packaging and any included paperwork. can i ask why you are returning it though?? i love knowing the reasons';return 'hiiii thank you for messaging!! i can help with that! quick question though: what happened after your last delivery? i heard a VERY interesting thing from Dispatch ♡'}
+function kwSendHelp(){let e=document.getElementById('kw-help-msg'),msg=e.value.trim();if(!msg)return notice('Please enter your question. ☺');let type=document.getElementById('kw-help-type').value;kwTickets.push({id:'H-'+(8812+kwTickets.length),type,msg,date:new Date().toLocaleDateString(),reply:kwSupportReply(type,msg)});kwSave('supporttickets',kwTickets);kwHelpView()}
+function kwHelpFollowup(id){let t=kwTickets.find(x=>x.id===id);modal('REPLY TO '+id,'<textarea id="kw-followup" class="field" rows="4" placeholder="Write a follow-up..."></textarea><button onclick="kwFollowupSend('+JSON.stringify(id)+')">SEND REPLY</button>')}
+function kwFollowupSend(id){let m=document.getElementById('kw-followup').value.trim();if(!m)return;let t=kwTickets.find(x=>x.id===id);t.msg+='\nFOLLOW-UP: '+m;t.reply=kwSupportReply(t.type,m);kwSave('supporttickets',kwTickets);closeModal();kwHelpView()}
+function kwTrackView(){let h=kwSect('KIND//TRACK — PACKAGE TRACKING')+kwCourierBanner()+'<div class="notice"><b>TRACK YOUR REQUISITIONS ☺</b><p>All parcels are handled by our friendly KIND//WELL Express fulfillment team.</p><input class="field" id="kw-track-search" placeholder="Tracking number (e.g. KW-R4102)"><button onclick="kwTrackLookup()">TRACK PACKAGE »</button></div>';
+ h+='<div class="section">RECENT SHIPMENTS</div>'+kwDeliveries.slice().reverse().map(d=>'<div class="work"><b>'+kwEsc(d.id)+'</b> · '+kwEsc(kwTrackSteps[d.status])+'<br><span class="kw-mini">'+kwEsc(d.item)+' · '+kwEsc(d.date)+'</span><br><a onclick="kwTrackDetail('+JSON.stringify(d.id)+')">VIEW TRACKING DETAILS »</a></div>').join('');document.getElementById('main').innerHTML=h;window.scrollTo(0,0)}
+function kwTrackLookup(){let id=document.getElementById('kw-track-search').value.trim().toUpperCase();kwTrackDetail(id)}
+function kwTrackDetail(id){let d=kwDeliveries.find(x=>x.id===id);if(!d)return notice('Tracking number not found. Please verify your reference number or contact KIND//HELP. ☺');let html=kwCourierBanner()+'<h3>TRACKING '+kwEsc(d.id)+'</h3><p><b>'+kwEsc(d.item)+'</b></p><div class="kw-timeline">'+kwTrackSteps.map((s,i)=>'<div>'+(i<=d.status?'☑':'□')+' '+s+'</div>').join('')+'</div><div class="kw-ticket-note"><b>Courier note — '+kwCourier.handle+':</b><br>'+kwEsc(d.notes)+'</div><button onclick="closeModal();show(\'help\')">CONTACT YOUR COURIER »</button>';modal('KIND//TRACK — '+d.id,html)}
+const kwOldRequestCourier=request;
+request=function(){let count=cart.length;if(count){let id='KW-R'+(4103+kwDeliveries.length-2);kwDeliveries.push({id,item:count+' warehouse item(s)',status:2,notes:'hiii!! i have your parcel in my delivery backpack! please make sure someone is available to sign ♡',date:new Date().toLocaleDateString()});kwSave('deliveries',kwDeliveries)}kwOldRequestCourier();};
+const kwCourierRender=kwRender;
+kwRender=function(p){if(p==='help'){kwHelpView();return true}if(p==='tracking'){kwTrackView();return true}if(p==='courier'){document.getElementById('main').innerHTML=kwSect('PERSONNEL DESK / EXPRESS FULFILLMENT')+kwCourierBanner()+'<div class="kw-98"><b>EMPLOYEE ID:</b> '+kwCourier.id+'<br><b>POSITION:</b> '+kwCourier.department+'<br><b>STATUS:</b> '+kwCourier.status+'<br><b>UNIFORM:</b> '+kwCourier.uniform+'<br><b>PERFORMANCE:</b> Outstanding delivery completion and customer rapport<br><b>SUPERVISOR NOTE:</b> Excellent fulfillment record. Repeatedly reminded that curiosity is not a required job function.</div><div class="notice"><button onclick="show(\'help\')">REQUEST HELP »</button> <button onclick="show(\'tracking\')">TRACK PACKAGE »</button></div>';return true}return kwCourierRender(p)};
+(function(){let bar=document.querySelector('.kw-extra-bar');if(bar){bar.insertAdjacentHTML('afterbegin','<button onclick="show(\'help\')">☎ KIND//HELP</button><button onclick="show(\'tracking\')">▣ KIND//TRACK</button><button onclick="show(\'courier\')">☺ EXPRESS STAFF</button>')}})();
+</script>
+</body></html>
